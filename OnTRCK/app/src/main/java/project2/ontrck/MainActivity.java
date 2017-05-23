@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = (ListView) findViewById(R.id.calendar_list_view);
-        String [] menuItems = new String[]{"Search","Normal","Special","Show"};
+        String [] menuItems = new String[]{"Search","Normal","Special","Show", "Input"};
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, menuItems);
         listView.setAdapter(adapter);
         ListView myListView = (ListView) findViewById(R.id.calendar_list_view);
@@ -48,6 +48,11 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if(position == 3){
                     Intent myIntent = new Intent(MainActivity.this, ShowPage.class);
+                    //  myIntent.putExtra("key", value); //Optional parameters
+                    MainActivity.this.startActivity(myIntent);
+                }
+                else if(position == 4){
+                    Intent myIntent = new Intent(MainActivity.this, InputPage.class);
                     //  myIntent.putExtra("key", value); //Optional parameters
                     MainActivity.this.startActivity(myIntent);
                 }
