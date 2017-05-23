@@ -47,135 +47,131 @@
             android:id="@+id/repeating_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="35dp"
+            android:text="Repeating"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="41dp"
-            android:layout_marginStart="41dp"
-            android:text="Repeating" />
+            android:layout_alignParentStart="true" />
 
         <Button
             android:id="@+id/special_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/repeating_button"
-            android:layout_alignBottom="@+id/repeating_button"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginEnd="54dp"
-            android:layout_marginRight="54dp"
-            android:text="Special" />
+            android:text="Special"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/friday"
+            android:layout_alignStart="@+id/friday" />
 
-        <CheckedTextView
+        <Button
             android:id="@+id/monday"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
 
-            android:layout_marginTop="11dp"
-            android:checkMark="@color/colorAccent"
-            android:checkMarkTint="@color/colorPrimary"
+            style="@style/Widget.AppCompat.Button.Small"
             android:checked="false"
             android:text="Mon"
             android:textAppearance="@style/TextAppearance.AppCompat.Button"
-            android:layout_marginLeft="30dp"
-            android:layout_marginStart="30dp"
-            android:layout_below="@+id/time_input"
-            android:layout_alignLeft="@+id/repeating_button"
-            android:layout_alignStart="@+id/repeating_button" />
+            android:layout_above="@+id/repeating_button"
+            android:layout_toLeftOf="@+id/tuesday"
 
-        <CheckedTextView
+            android:layout_marginRight="10dp"
+             />
+
+        <Button
             android:id="@+id/tuesday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:checkMark="@color/colorAccent"
-            android:checkMarkTint="@color/colorPrimary"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:background="@drawable/button_background"
             android:checked="false"
             android:text="Tue"
             android:textAppearance="@style/TextAppearance.AppCompat.Button"
-            android:layout_alignBaseline="@+id/monday"
-            android:layout_alignBottom="@+id/monday"
-            android:layout_toRightOf="@+id/repeating_button"
-            android:layout_toEndOf="@+id/repeating_button" />
+            android:layout_above="@+id/repeating_button"
+            android:layout_toLeftOf="@+id/wednesday"
+            android:layout_marginRight="10dp"
+             />
 
-        <CheckedTextView
+        <Button
             android:id="@+id/wednesday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:checkMark="@color/colorAccent"
-            android:checkMarkTint="@color/colorPrimary"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:background="@drawable/button_background"
             android:checked="false"
             android:text="Wed"
             android:textAppearance="@style/TextAppearance.AppCompat.Button"
-            android:layout_alignBaseline="@+id/tuesday"
-            android:layout_alignBottom="@+id/tuesday"
+            android:layout_below="@+id/time_input"
+            android:layout_marginTop="15dp"
             android:layout_centerHorizontal="true" />
 
-        <CheckedTextView
+        <Button
             android:id="@+id/thursday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:checkMark="@color/colorAccent"
-            android:checkMarkTint="@color/colorPrimary"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:background="@drawable/button_background"
             android:checked="false"
             android:text="Thu"
             android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:layout_toRightOf="@+id/wednesday"
             android:layout_alignBaseline="@+id/wednesday"
             android:layout_alignBottom="@+id/wednesday"
-            android:layout_toLeftOf="@+id/special_button"
-            android:layout_toStartOf="@+id/special_button" />
+            android:layout_marginLeft="10dp"
+             />
 
-        <CheckedTextView
+        <Button
             android:id="@+id/friday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:checkMark="@color/colorAccent"
-            android:checkMarkTint="@color/colorPrimary"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:background="@drawable/button_background"
             android:checked="false"
             android:text="Fri"
             android:textAppearance="@style/TextAppearance.AppCompat.Button"
-            android:layout_alignBaseline="@+id/thursday"
-            android:layout_alignBottom="@+id/thursday"
             android:layout_toRightOf="@+id/thursday"
-            android:layout_toEndOf="@+id/thursday"
-            android:layout_marginLeft="31dp"
-            android:layout_marginStart="31dp" />
+            android:layout_alignBaseline="@+id/wednesday"
+            android:layout_alignBottom="@+id/wednesday"
+            android:layout_marginLeft="10dp"
+             />
 
-        <CheckedTextView
+        <Button
             android:id="@+id/saturday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:checkMark="@color/colorAccent"
-            android:checkMarkTint="@color/colorPrimary"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:background="@drawable/button_background"
             android:checked="false"
             android:text="Sat"
             android:textAppearance="@style/TextAppearance.AppCompat.Button"
-            android:layout_alignBaseline="@+id/thursday"
-            android:layout_alignBottom="@+id/thursday"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="32dp"
-            android:layout_marginEnd="32dp" />
+            android:layout_above="@+id/special_button"
+            android:layout_toRightOf="@+id/friday"
+            android:layout_alignBaseline="@+id/wednesday"
+            android:layout_alignBottom="@+id/wednesday"
+            android:layout_marginLeft="10dp" />
 
-        <CheckedTextView
+        <Button
             android:id="@+id/sunday"
+            style="@style/Widget.AppCompat.Button.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_alignBaseline="@+id/monday"
             android:layout_alignBottom="@+id/monday"
-            android:layout_alignLeft="@+id/enter_event_label"
-            android:layout_alignStart="@+id/enter_event_label"
+
+
+            android:background="@drawable/button_background"
             android:checkMark="@color/colorAccent"
-            android:checkMarkTint="@color/colorPrimary"
+            android:layout_toLeftOf="@+id/monday"
+            android:layout_marginRight="10dp"
             android:checked="false"
             android:text="Sun"
             android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+
 
     </RelativeLayout>
 </LinearLayout>
