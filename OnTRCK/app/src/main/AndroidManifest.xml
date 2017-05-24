@@ -17,12 +17,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="InputPage" />
+        <activity android:name="SecondSchedulePage" />
         <activity android:name="SearchPage"/>
-        <activity android:name="NormalPage"/>
         <activity android:name="SpecialPage"/>
-        <activity android:name="ShowPage"/>
-        <activity android:name="parseClass" />
+        <activity android:name="ParseClass" />
+        <activity android:name="SchedulePage"/>
 
 
     </application>
