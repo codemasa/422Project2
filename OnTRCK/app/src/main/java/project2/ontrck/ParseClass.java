@@ -3,6 +3,7 @@ package project2.ontrck;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 /**
  * Created by talaba on 5/16/17.
@@ -20,6 +21,7 @@ public class ParseClass extends AppCompatActivity {
         setContentView(R.layout.parse_page);
         Intent mIntent = getIntent();
         date = mIntent.getStringExtra("date");
+        Toast.makeText(getApplicationContext(),date,Toast.LENGTH_SHORT).show();
         insert.setInformation(date,event,hour,minute);
 
     }
