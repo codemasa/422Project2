@@ -8,9 +8,9 @@ public class InsertEvent {
     public void main(){
         ///Kaiyu can start here if you want
     }
-    public void setInformation(String date, String event, int hour, int minute){
+    public void setInformation(String date, String event, String start_time, String end_time){
 
-
+// 12 50
 
     }
 

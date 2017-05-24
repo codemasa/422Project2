@@ -22,6 +22,7 @@
         <activity android:name="SpecialPage"/>
         <activity android:name="ParseClass" />
         <activity android:name="SchedulePage"/>
+        <activity android:name="DisplayPage" />
 
 
     </application>
