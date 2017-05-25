@@ -19,9 +19,9 @@
         </activity>
         <activity android:name="SecondSchedulePage" />
         <activity android:name="SearchPage"/>
-        <activity android:name="SpecialPage"/>
         <activity android:name="ParseClass" />
         <activity android:name="SchedulePage"/>
+        <activity android:name="EndTimeSchedulePage" />
         <activity android:name="DisplayPage" />
 
 

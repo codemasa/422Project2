@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                     MainActivity.this.startActivity(myIntent);
                 }
                 else if(position == 1){
-                    Intent myIntent = new Intent(MainActivity.this, SpecialPage.class);
+                    Intent myIntent = new Intent(MainActivity.this, SchedulePage.class);
                     //  myIntent.putExtra("key", value); //Optional parameters
                     MainActivity.this.startActivity(myIntent);
                 }
