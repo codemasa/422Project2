@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TimePicker;
-import android.widget.Toast;
 
 /**
  * Created by talaba on 5/16/17.
@@ -26,16 +25,12 @@ public class SecondSchedulePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second_schedule_page);
 
-        //getting date from date class
 
-        Intent mIntent = getIntent();
+
+        Intent mIntent = getIntent();                                     //getting date from date class
         date = mIntent.getStringExtra("date");
-        Toast.makeText(getApplicationContext(),date,Toast.LENGTH_SHORT).show();
 
-        // after theyve selected a time
-
-
-        Button submitButton = (Button) findViewById(R.id.submit_button);
+        Button submitButton = (Button) findViewById(R.id.submit_button);  // after theyve selected a time
 
         submitButton.setOnClickListener(new View.OnClickListener() {
 

@@ -1,10 +1,9 @@
 package project2.ontrck;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 import android.util.Log;
+import android.widget.Toast;
 
 /**
  * Created by talaba on 5/16/17.
@@ -20,8 +19,6 @@ public class ParseClass extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.end_time_schedule_page);
-        Intent mIntent = getIntent();
-        date = mIntent.getStringExtra("date");
         Toast.makeText(getApplicationContext(),"this is the date from parse: " + date,Toast.LENGTH_SHORT).show();
         startTime = startHour + " " + startMinute;
         endTime = endHour + " " + endMinute;
