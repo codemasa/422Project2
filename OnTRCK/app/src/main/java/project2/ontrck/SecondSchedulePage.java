@@ -17,7 +17,7 @@ public class SecondSchedulePage extends AppCompatActivity {
 
     String date, event;
     int startHour, startMinute, endHour, endMinute;
-    EndTimeSchedulePage endTime = new EndTimeSchedulePage();
+    //EndTimeSchedulePage endTime = new EndTimeSchedulePage();
     ParseClass parser = new ParseClass();
 
     @Override
@@ -43,8 +43,7 @@ public class SecondSchedulePage extends AppCompatActivity {
                 startHour = timePickerForSpecial.getHour();
                 startMinute = timePickerForSpecial.getMinute();
                 event = "testing group name";
-                endTime.setInformation(startHour, startMinute, date);
-                parser.setDate(date);
+               // endTime.setInformation(startHour, startMinute, date);
                 openEndSchedulePage();
             }
         });
@@ -54,6 +53,10 @@ public class SecondSchedulePage extends AppCompatActivity {
     public void openEndSchedulePage(){
 
         Intent myIntent = new Intent(this, EndTimeSchedulePage.class);
+        myIntent.putExtra("startHour", startHour);
+        myIntent.putExtra("startMinute", startMinute);
+        myIntent.putExtra("event", event);
+        myIntent.putExtra("date", date);
         startActivity(myIntent);
     }
 
