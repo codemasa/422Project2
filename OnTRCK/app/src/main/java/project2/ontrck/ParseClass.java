@@ -16,7 +16,6 @@ public class ParseClass extends AppCompatActivity {
 
     //InsertEvent insert = new InsertEvent();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +39,7 @@ public class ParseClass extends AppCompatActivity {
 
     }
     public void goBackToMain(){
-        Toast.makeText(getApplicationContext(), event + " Scheduled on " + date , Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), event + " Scheduled ", Toast.LENGTH_SHORT).show();
         Intent myIntent = new Intent(this, MainActivity.class);
         startActivity(myIntent);
 
