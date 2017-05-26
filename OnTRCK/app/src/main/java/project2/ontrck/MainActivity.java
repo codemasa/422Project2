@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = (ListView) findViewById(R.id.calendar_list_view);
-        String [] menuItems = new String[]{"Schedule Appointment","Schedule a range of Appointments","Search for an Appointment"};
+        String [] menuItems = new String[]{"Schedule Appointment","Schedule a range of Appointments","Search for an Appointment", "Delete Appointment", "Show schedule"};
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, menuItems);
         listView.setAdapter(adapter);
         ListView myListView = (ListView) findViewById(R.id.calendar_list_view);
@@ -41,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if(position == 2){
                     Intent myIntent = new Intent(MainActivity.this, SearchPage.class);
+                    //  myIntent.putExtra("key", value); //Optional parameters
+                    MainActivity.this.startActivity(myIntent);
+                }
+                else if(position == 4){
+                    Intent myIntent = new Intent(MainActivity.this, DisplayPage.class);
                     //  myIntent.putExtra("key", value); //Optional parameters
                     MainActivity.this.startActivity(myIntent);
                 }

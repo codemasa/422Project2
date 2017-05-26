@@ -12,70 +12,26 @@
             android:id="@+id/event_input"
             android:layout_width="130dp"
             android:layout_height="55dp"
-            android:layout_marginLeft="38dp"
-            android:layout_marginStart="38dp"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="181dp"
             android:ems="10"
             android:inputType="textCapWords"
-            android:layout_below="@+id/textView2"
-            android:layout_toRightOf="@+id/enter_event_label"
-            android:layout_toEndOf="@+id/enter_event_label" />
-
-        <EditText
-            android:id="@+id/date_input"
-            android:layout_width="135dp"
-            android:layout_height="55dp"
-            android:ems="10"
-            android:inputType="date"
-            android:layout_alignBottom="@+id/enter_time_label"
-            android:layout_alignLeft="@+id/event_input"
-            android:layout_alignStart="@+id/event_input" />
-
-        <TextView
-            android:id="@+id/enter_time_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="38dp"
-            android:layout_marginStart="38dp"
-            android:layout_marginTop="96dp"
-            android:text="Enter date"
-            android:textSize="24sp" />
+            android:layout_toRightOf="@+id/search_button"
+            android:layout_toEndOf="@+id/search_button" />
 
         <TextView
             android:id="@+id/enter_event_label"
             android:layout_width="130dp"
             android:layout_height="35dp"
-            android:layout_alignBottom="@+id/event_input"
-            android:layout_alignLeft="@+id/enter_time_label"
-            android:layout_alignStart="@+id/enter_time_label"
-            android:text="Enter event"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/enter_event_label"
-            android:layout_marginBottom="56dp"
-            android:layout_toLeftOf="@+id/date_input"
-            android:layout_toStartOf="@+id/date_input"
-            android:text="-OR-"
-            android:textSize="36sp" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/date_input"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignStart="@+id/date_input"
-            android:layout_below="@+id/date_input"
-            android:layout_marginTop="15dp"
-            android:text="ex: dd mm yyyy" />
+            android:text="Enter event name"
+            android:textSize="24sp"
+            android:layout_above="@+id/search_button"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="33dp"
+            android:layout_marginStart="33dp"
+            android:layout_toLeftOf="@+id/event_input"
+            android:layout_toStartOf="@+id/event_input" />
 
         <Button
             android:id="@+id/search_button"

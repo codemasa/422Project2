@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 public class SearchPage extends AppCompatActivity {
     String eventName;
-    String date;
     EditText eventInput;
     EditText dateInput;
     InsertEvent data = new InsertEvent();
@@ -25,30 +24,23 @@ public class SearchPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_page);
         eventInput = (EditText)findViewById(R.id.event_input);
-        dateInput = (EditText)findViewById(R.id.date_input);
+
         Button searchButton = (Button) findViewById(R.id.search_button);
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 eventName = eventInput.getText().toString();
-                date = dateInput.getText().toString();
 
-                searchButtonPressed(eventName, date);
+
+                searchButtonPressed(eventName);
             }
         });
     }
 
-    public void searchButtonPressed(String eventName, String date){
+    public void searchButtonPressed(String eventName){
 
-        if(eventName.matches("") && date.matches("")) {
-            Toast.makeText(getApplicationContext(),"Please enter a date or a event",Toast.LENGTH_SHORT).show();
-        }
-        else if(!(eventName.matches("")) && !(date.matches(""))){
-            Toast.makeText(getApplicationContext(),"Please only enter single field ",Toast.LENGTH_SHORT).show();
-        }
-        else if(eventName.matches("")){
-            //data.searchDate(date);
-
+        if(eventName.matches("")) {
+            Toast.makeText(getApplicationContext(),"Please enter a event",Toast.LENGTH_SHORT).show();
         }
         else{
             //data.searchEvent(eventName);

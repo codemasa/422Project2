@@ -33,7 +33,7 @@ public class ParseClass extends AppCompatActivity {
         Log.d("date: ", " " + date);
         startTime = startHour + " " + startMinute;
         endTime = endHour + " " + endMinute;
-      //  insert.setInformation(date,event,startTime,endTime);
+      // insert.setInformation(date,event,startTime,endTime);
 
         goBackToMain();
 

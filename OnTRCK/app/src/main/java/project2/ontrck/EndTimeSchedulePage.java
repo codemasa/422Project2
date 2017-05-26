@@ -46,6 +46,9 @@ public class EndTimeSchedulePage extends AppCompatActivity {
                 timePickerForSpecial = (TimePicker) findViewById(R.id.time_input);
                 endHour = timePickerForSpecial.getHour();
                 endMinute = timePickerForSpecial.getMinute();
+                if(endHour > startHour){
+
+                }
                 // Toast.makeText(getApplicationContext(), "this is the time and event " + hour + " " + minute + " " + event + " ", Toast.LENGTH_SHORT).show();
                 sendData();
 
