@@ -14,27 +14,30 @@ import android.widget.Toast;
 public class SearchPage extends AppCompatActivity {
     String eventName;
     String date;
+    EditText eventInput;
+    EditText dateInput;
     InsertEvent data = new InsertEvent();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_page);
-        EditText eventInput = (EditText)findViewById(R.id.event_input);
-        EditText dateInput = (EditText)findViewById(R.id.date_input);
-         eventName = eventInput.getText().toString();
-         date = dateInput.getText().toString();
-
+        eventInput = (EditText)findViewById(R.id.event_input);
+        dateInput = (EditText)findViewById(R.id.date_input);
         Button searchButton = (Button) findViewById(R.id.search_button);
         searchButton.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
+                eventName = eventInput.getText().toString();
+                date = dateInput.getText().toString();
+
                 searchButtonPressed(eventName, date);
             }
         });
     }
+
     public void searchButtonPressed(String eventName, String date){
 
         if(eventName.matches("") && date.matches("")) {
