@@ -5,9 +5,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TimePicker;
+
 
 /**
  * Created by talaba on 5/16/17.
@@ -15,7 +18,8 @@ import android.widget.TimePicker;
 
 public class SecondSchedulePage extends AppCompatActivity {
 
-    String date, event;
+    String date;
+    String event;
     int startHour, startMinute, endHour, endMinute;
     //EndTimeSchedulePage endTime = new EndTimeSchedulePage();
     ParseClass parser = new ParseClass();
@@ -42,7 +46,10 @@ public class SecondSchedulePage extends AppCompatActivity {
                 timePickerForSpecial = (TimePicker) findViewById(R.id.time_input);
                 startHour = timePickerForSpecial.getHour();
                 startMinute = timePickerForSpecial.getMinute();
-                event = "testing group name";
+                EditText eventInput = (EditText)findViewById(R.id.event_input);
+                event = eventInput.getText().toString();
+                Log.d("event: ", "->" + event);
+
                // endTime.setInformation(startHour, startMinute, date);
                 openEndSchedulePage();
             }

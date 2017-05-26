@@ -11,14 +11,14 @@
             android:id="@+id/event_input"
             android:layout_width="130dp"
             android:layout_height="55dp"
-            android:layout_marginTop="66dp"
+            android:layout_marginTop="142dp"
             android:ems="10"
             android:inputType="textCapWords"
+            android:layout_marginLeft="36dp"
+            android:layout_marginStart="36dp"
             android:layout_below="@+id/time_input_label"
             android:layout_toRightOf="@+id/enter_event_label"
-            android:layout_toEndOf="@+id/enter_event_label"
-            android:layout_marginLeft="36dp"
-            android:layout_marginStart="36dp" />
+            android:layout_toEndOf="@+id/enter_event_label" />
 
         <EditText
             android:id="@+id/time_input_label"
@@ -28,20 +28,20 @@
             android:layout_alignLeft="@+id/event_input"
             android:layout_alignStart="@+id/event_input"
             android:ems="10"
-            android:inputType="time" />
+            android:inputType="date" />
 
         <TextView
             android:id="@+id/enter_time_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="96dp"
-            android:text="Enter time"
-            android:textSize="24sp"
-            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_marginLeft="38dp"
-            android:layout_marginStart="38dp" />
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="96dp"
+            android:text="Enter date"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/enter_event_label"
@@ -49,8 +49,31 @@
             android:layout_height="35dp"
             android:text="Enter event"
             android:textSize="24sp"
-            android:layout_alignTop="@+id/event_input"
+            android:layout_alignBottom="@+id/event_input"
             android:layout_alignLeft="@+id/enter_time_label"
             android:layout_alignStart="@+id/enter_time_label" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-OR-"
+            android:textSize="36sp"
+            android:layout_above="@+id/enter_event_label"
+            android:layout_toLeftOf="@+id/time_input_label"
+            android:layout_toStartOf="@+id/time_input_label"
+            android:layout_marginBottom="56dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ex: dd mm yyyy"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/time_input_label"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignLeft="@+id/time_input_label"
+            android:layout_alignStart="@+id/time_input_label" />
     </RelativeLayout>
 </LinearLayout>
