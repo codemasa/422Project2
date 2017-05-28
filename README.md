@@ -22,7 +22,9 @@ For instructions on how to install this on your device please go [here](./README
 ##
 ## Extensibility 
 Extending this application is very easy if you know [Java](./README.md) and/or [Kotlin](./README.md)
+
 If you want to know how this works, check the [design](./README.md) page
+
 For instructions on how to modify this application go [here](./README.md)
 
 ##
