@@ -1,12 +1,16 @@
 package project2.ontrck;
 
 
+import android.content.Intent;
 import android.icu.text.SimpleDateFormat;
 import android.icu.util.Calendar;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CalendarView;
 
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -16,11 +20,38 @@ public class DisplayPage extends AppCompatActivity {
     String inputString2 = "testing";
     String inputString1 = "testing2";
     int day;
+    int day_, month_, year_;
+    String date_;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.display_page);
+        Button select_date = (Button) findViewById(R.id.select_button);
+        final CalendarView calendar = (CalendarView) findViewById(R.id.simpleCalendarView); // get the reference of CalendarView
+        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+
+            @Override
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
+                int day_of_month = dayOfMonth;
+                day_ = day_of_month;
+                month_ = month;
+                year_ = year;
+                date_ = (Integer.toString(day_) + " " + Integer.toString(month_) + " " + Integer.toString(year_));
+            }
+        });
+
+        select_date.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(DisplayPage.this, EventDisplay.class);
+                //im sending the date selected by the user over to the time input class
+                myIntent.putExtra("date", date_); //Optional parameters
+                DisplayPage.this.startActivity(myIntent);
+            }
+        });
     }
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void setCustomResourceForDates() {
@@ -60,8 +91,8 @@ public class DisplayPage extends AppCompatActivity {
             int holidayDay;
 
 
-
         }
+
     }
 
 }
