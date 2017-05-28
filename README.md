@@ -21,7 +21,7 @@ For instructions on how to install this on your device please go [here](./README
 
 ##
 ## Extensibility 
-Extending this application is very easy if you know [Java](./README.md) and/or [Kotlin](./README.md)
+Extending this application is very easy if you know [Java](./README.md) and/or [Kotlin](./README.md), and can work with [Android Studio](./README.md) or any other IDE
 
 If you want to know how this works, check the [design](./README.md) page
 
