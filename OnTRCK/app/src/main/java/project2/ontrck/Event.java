@@ -18,4 +18,36 @@ public class Event {
         Start = start;
         End = end;
     }
+
+    public void SetDate(int[] dmy){
+        DMY = dmy;
+    }
+
+    public void SetStartTime(int[] start){
+        Start = start;
+    }
+
+    public void SetEndTime(int[] end){
+        End = end;
+    }
+
+    public void SetName(String name){
+        Name = name;
+    }
+
+    public String GetName(){
+        return Name;
+    }
+
+    public int[] GetStartTime(){
+        return Start;
+    }
+
+    public int[] GetEndTime(){
+        return End;
+    }
+
+    public  int[] GetDate(){
+        return DMY;
+    }
 }
