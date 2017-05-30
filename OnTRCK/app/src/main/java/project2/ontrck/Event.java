@@ -51,4 +51,12 @@ public class Event {
     public  Calendar GetDate(){
         return DMY;
     }
+
+    public boolean After(Event e){
+        return Start.after(e.GetStartTime());
+    }
+
+    public boolean Before(Event e){
+        return End.before(e.GetStartTime());
+    }
 }
