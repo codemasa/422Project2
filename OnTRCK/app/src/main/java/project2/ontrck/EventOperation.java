@@ -17,11 +17,19 @@ public class EventOperation {
 
     }
 
-    public void Delete(){
-
+    public boolean Delete(String name){
+        Event target = Search(name);
+        if(target == null){
+            return false;
+        }
+        else {
+            EL.remove(target);
+            return true;
+        }
     }
 
     public void Change(String name, String order, String value){
+        Event target = Search(name).clone();
         switch (order){
             case "Date":
                 Search(name).SetDate(Date(value));

@@ -59,4 +59,8 @@ public class Event {
     public boolean Before(Event e){
         return End.before(e.GetStartTime());
     }
+
+    public Event clone(){
+        return new Event(DMY, Name, Start, End);
+    }
 }
