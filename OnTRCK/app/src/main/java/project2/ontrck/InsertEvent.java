@@ -2,8 +2,12 @@ package project2.ontrck;
 
 import android.support.annotation.IntDef;
 
+import java.text.DateFormat;
+import java.text.FieldPosition;
+import java.text.ParsePosition;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 /**
@@ -26,10 +30,16 @@ public class InsertEvent {
         el.add(Ev);
     }
 
+    public void SmartSet(Event e){
+        for(int i = 0; i < el.size(); i ++){
+
+        }
+    }
+
     public Calendar Date(String Date){
         Calendar date = new GregorianCalendar();
         int[] d = Deal(Date);
-        date.set(d[0], d[1], d[2]);
+        date.set(d[0], d[1]-1, d[2]);
         return date;
     }
 
@@ -37,7 +47,7 @@ public class InsertEvent {
         Calendar time = new GregorianCalendar();
         int[] d = Deal(Date);
         int[] t = Deal(Time);
-        time.set(d[0], d[1], d[2], t[0], t[1]);
+        time.set(d[0], d[1]-1, d[2], t[0], t[1]);
         return time;
     }
 
@@ -48,6 +58,23 @@ public class InsertEvent {
             result[i] = Integer.parseInt(s[i]);
         }
         return result;
+    }
+
+    public Event SearchName(String name){
+        for(int i = 0; i < el.size(); i ++){
+            if(el.get(i).GetName() == name){
+                return el.get(i);
+            }
+        }
+        return null;
+    }
+
+    public void Delete(String name){
+        for(int i = 0; i < el.size(); i ++){
+            if(el.get(i).GetName() == name){
+                el.remove(el.get(i));
+            }
+        }
     }
 
 }
