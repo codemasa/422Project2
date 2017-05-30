@@ -1,33 +1,34 @@
 package project2.ontrck;
 
 import java.util.List;
+import java.util.Calendar;
 
 /**
  * Created by songkaiyu on 5/24/17.
  */
 
 public class Event {
-    private int[] DMY;
+    private Calendar DMY;
     private String Name;
-    private int[] Start;
-    private int[] End;
+    private Calendar Start;
+    private Calendar End;
 
-    public Event(int[] dmy, String name, int[] start, int[] end){
+    public Event(Calendar dmy, String name, Calendar start, Calendar end){
         DMY = dmy;
         Name = name;
         Start = start;
         End = end;
     }
 
-    public void SetDate(int[] dmy){
+    public void SetDate(Calendar dmy){
         DMY = dmy;
     }
 
-    public void SetStartTime(int[] start){
+    public void SetStartTime(Calendar start){
         Start = start;
     }
 
-    public void SetEndTime(int[] end){
+    public void SetEndTime(Calendar end){
         End = end;
     }
 
@@ -39,15 +40,15 @@ public class Event {
         return Name;
     }
 
-    public int[] GetStartTime(){
+    public Calendar GetStartTime(){
         return Start;
     }
 
-    public int[] GetEndTime(){
+    public Calendar GetEndTime(){
         return End;
     }
 
-    public  int[] GetDate(){
+    public  Calendar GetDate(){
         return DMY;
     }
 }
