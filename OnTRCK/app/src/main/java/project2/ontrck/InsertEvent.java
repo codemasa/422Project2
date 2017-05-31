@@ -60,7 +60,7 @@ public class InsertEvent {
         }
         return result;
     }
-    public ArrayList<Event> getCalendar(){
+    public ArrayList<Event> GetEventList(){
         return EventList;
     }
 }
