@@ -14,7 +14,7 @@ public class ParseClass extends AppCompatActivity {
     int[] startTime, endTime;
     String event, date = "no date input yet!";
 
-    //InsertEvent insert = new InsertEvent();
+    InsertEvent insert = new InsertEvent();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ public class ParseClass extends AppCompatActivity {
         endTime[1] = endMinute;
 
 
-        //insert.setInformation(date,event,startTime,endTime);
+        insert.setInformation(date,event,startTime,endTime);
         goBackToMain();
 
     }
