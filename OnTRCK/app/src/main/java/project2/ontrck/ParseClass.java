@@ -11,10 +11,10 @@ import android.widget.Toast;
  */
 
 public class ParseClass extends AppCompatActivity {
-    int startHour, startMinute, endHour, endMinute;
-    String event, date = "no date input yet!", startTime, endTime;
+    int startHour, startMinute, endHour, endMinute, startTime, endTime;
+    String event, date = "no date input yet!";
 
-    //InsertEvent insert = new InsertEvent();
+    InsertEvent insert = new InsertEvent();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +31,9 @@ public class ParseClass extends AppCompatActivity {
         Log.d( "end time: " ,  endHour + "" + endMinute);
         Log.d("event: ", " " + event);
         Log.d("date: ", " " + date);
-        startTime = startHour + " " + startMinute;
-        endTime = endHour + " " + endMinute;
-      // insert.setInformation(date,event,startTime,endTime);
-
+        startTime = startHour  + startMinute;
+        endTime = endHour  + endMinute;
+        insert.setInformation(date,event,startTime,endTime);
         goBackToMain();
 
     }
