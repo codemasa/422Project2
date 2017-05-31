@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                     MainActivity.this.startActivity(myIntent);
                 }
                 else if(position == 4){
-                    Intent myIntent = new Intent(MainActivity.this, DisplayPage.class);
+                    Intent myIntent = new Intent(MainActivity.this, SelectDayForDisplay.class);
                     //  myIntent.putExtra("key", value); //Optional parameters
                     MainActivity.this.startActivity(myIntent);
                 }

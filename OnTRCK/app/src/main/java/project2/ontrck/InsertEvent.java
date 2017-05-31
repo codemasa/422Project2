@@ -48,10 +48,6 @@ public class InsertEvent extends AppCompatActivity {
 
         goBackToMain();
     }
-    public ArrayList<Event> getCalendar() {
-        return calendar;
-    }
-
 
     public void setInformation(String date, String _event, int[] _startTime, int[] _endTime) {
      //   if (NameSearch(_event)) {
@@ -67,6 +63,8 @@ public class InsertEvent extends AppCompatActivity {
             month = Integer.parseInt(splitDate[1]);
             year = Integer.parseInt(splitDate[2]);
             event.setDay(day);
+            event.setMonth(month);
+            event.setYear(year);
 
             event.setEventName(eventName);
 
@@ -86,8 +84,6 @@ public class InsertEvent extends AppCompatActivity {
 
         //}
     }
-
-
 
 
     /*public boolean NameSearch(String name) {

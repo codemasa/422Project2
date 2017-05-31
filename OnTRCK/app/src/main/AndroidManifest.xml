@@ -21,9 +21,11 @@
         <activity android:name="SearchPage"/>
         <activity android:name="SchedulePage"/>
         <activity android:name="EndTimeSchedulePage" />
-        <activity android:name="DisplayPage" />
         <activity android:name="EventDisplay" />
         <activity android:name="InsertEvent" />
+        <activity android:name="SelectDayForDisplay" />
+
+
 
 
 

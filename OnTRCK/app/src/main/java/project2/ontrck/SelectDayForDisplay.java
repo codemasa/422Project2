@@ -12,7 +12,7 @@ import android.widget.CalendarView;
  * Created by talaba on 5/16/17.
  */
 
-public class SchedulePage extends AppCompatActivity {
+public class SelectDayForDisplay extends AppCompatActivity {
     String date;
     int day_, month_, year_;
     @Override
@@ -37,11 +37,10 @@ public class SchedulePage extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(SchedulePage.this, SecondSchedulePage.class);
+                Intent myIntent = new Intent(SelectDayForDisplay.this, EventDisplay.class);
                 //im sending the date selected by the user over to the time input class
                 myIntent.putExtra("date", date); //Optional parameters
-
-                SchedulePage.this.startActivity(myIntent);
+                SelectDayForDisplay.this.startActivity(myIntent);
             }
         });
 
