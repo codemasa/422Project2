@@ -14,20 +14,9 @@ public class InsertEvent {
     }
 
     public void setInformation(String date, String _event, int _startTime, int _endTime) {
-
-        int day, month, year;
-        Event event = new Event();
-        String[] splitDate = date.split("\\s+");
-        day = Integer.parseInt(splitDate[0]);
-        month = Integer.parseInt(splitDate[1]);
-        year = Integer.parseInt(splitDate[2]);
-        event.setDay(day);
-        event.setMonth(month);
-        event.setYear(year);
-        event.setEventName(_event);
-        calendar.add(count, event);
-        count++;
-        // Log.d("this is the current event: ", calendar.get((count -1)).getEventName());
+        //date: 24 12 2017 dd mm yyyy
+        //-starttime: 1845
+         
     }
     public ArrayList<Event> getCalendar(){
         return calendar;
