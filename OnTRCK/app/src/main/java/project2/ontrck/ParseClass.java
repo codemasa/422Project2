@@ -3,7 +3,6 @@ package project2.ontrck;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.Toast;
 
 /**
@@ -11,7 +10,8 @@ import android.widget.Toast;
  */
 
 public class ParseClass extends AppCompatActivity {
-    int startHour, startMinute, endHour, endMinute, startTime, endTime;
+    int startHour, startMinute, endHour, endMinute;
+    int[] startTime, endTime;
     String event, date = "no date input yet!";
 
     InsertEvent insert = new InsertEvent();
@@ -27,12 +27,13 @@ public class ParseClass extends AppCompatActivity {
         endMinute = mIntent.getIntExtra("endMinute", 0);
         event = mIntent.getStringExtra("event");
         date = mIntent.getStringExtra("date");
-        Log.d("start time: " , startHour + "" + startMinute);
-        Log.d( "end time: " ,  endHour + "" + endMinute);
-        Log.d("event: ", " " + event);
-        Log.d("date: ", " " + date);
-        startTime = startHour  + startMinute;
-        endTime = endHour  + endMinute;
+
+         startTime[0] = startHour;
+         startTime[1] = startMinute;
+        endTime[0] = endHour;
+        endTime[1] = endMinute;
+
+
         insert.setInformation(date,event,startTime,endTime);
         goBackToMain();
 

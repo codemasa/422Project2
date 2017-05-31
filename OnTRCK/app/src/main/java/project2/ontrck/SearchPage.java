@@ -31,7 +31,6 @@ public class SearchPage extends AppCompatActivity {
             public void onClick(View v) {
                 eventName = eventInput.getText().toString();
 
-
                 searchButtonPressed(eventName);
             }
         });

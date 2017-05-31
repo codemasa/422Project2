@@ -6,14 +6,13 @@ import java.util.ArrayList;
  */
 
 public class InsertEvent {
-    ArrayList<Event> calendar = new ArrayList<Event>();
+    ArrayList<Event> EventList = new ArrayList<Event>();
     int count;
 
-    public void main() {
-        Event event2 = new Event();
-    }
 
-    public void setInformation(String date, String _event, int _startTime, int _endTime) {
+    public void setInformation(String date, String _event, int[] _startTime, int[] _endTime) {
+        // date: dd mm yyyy
+        // startime: [hh,mm]
 
         int day, month, year;
         Event event = new Event();
@@ -21,17 +20,11 @@ public class InsertEvent {
         day = Integer.parseInt(splitDate[0]);
         month = Integer.parseInt(splitDate[1]);
         year = Integer.parseInt(splitDate[2]);
-        event.setDay(day);
-        event.setMonth(month);
-        event.setYear(year);
-        event.setEventName(_event);
-        calendar.add(count, event);
+        EventList.add(count, event);
         count++;
         // Log.d("this is the current event: ", calendar.get((count -1)).getEventName());
     }
-    public ArrayList<Event> getCalendar(){
-        return calendar;
+    public ArrayList<Event> getEventList(){
+        return EventList;
     }
-
-
 }

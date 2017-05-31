@@ -6,16 +6,19 @@ package project2.ontrck;
 
 public class Event {
 
-    int day, month, year, startTime, endTime;
+    int day, month, year;
+    int[] startTime, endTime;
     String eventName;
     public Event(){
         day = 0;
         month = 0;
         year = 0;
-        startTime = 0;
-        endTime = 0;
+        startTime[0] = 0;
+        startTime[1] = 0;
+        endTime[0] = 0;
+        endTime[1] = 0;
         eventName = "hasnt been set yet :(";
-    }
+    }/*
     public String getEventName(){
         return eventName;
     }
@@ -28,16 +31,16 @@ public class Event {
     public int getYear(){
         return year;
     }
-    public int getStartTime(){
+    public int[] getStartTime(){
         return startTime;
     }
-    public int getEndTime(){
+    public int[] getEndTime(){
         return endTime;
     }
-    public void setStartTime(int _time){
+    public void setStartTime(int[] _time){
         startTime = _time;
     }
-    public void setEndTime(int _time){
+    public void setEndTime(int[] _time){
         startTime = _time;
     }
     public void setDay(int _day){
@@ -51,5 +54,5 @@ public class Event {
     }
     public void setEventName(String _eventName){
         eventName = _eventName;
-    }
+    }*/
 }
