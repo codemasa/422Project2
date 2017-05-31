@@ -23,7 +23,7 @@ No more double booking or being late!
 This project is an open source Android application. You will be able to use this application on your own Android Device for free!
 
 ## Installation 
-For instructions on how to install this on your device please go [here](./install.md)
+For instructions on how to install this on your device please go [here](https://github.com/codemasa/422Project2/wiki/Install)
 
 ##
 ## Extensibility 
