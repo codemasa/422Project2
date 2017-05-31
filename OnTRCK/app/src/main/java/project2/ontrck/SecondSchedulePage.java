@@ -22,7 +22,7 @@ public class SecondSchedulePage extends AppCompatActivity {
     String event;
     int startHour, startMinute, endHour, endMinute;
     //EndTimeSchedulePage endTime = new EndTimeSchedulePage();
-    ParseClass parser = new ParseClass();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

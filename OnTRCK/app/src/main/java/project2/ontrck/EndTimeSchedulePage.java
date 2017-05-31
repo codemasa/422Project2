@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TimePicker;
-import android.util.*;
 
 /**
  * Created by talaba on 5/16/17.
@@ -28,10 +27,6 @@ public class EndTimeSchedulePage extends AppCompatActivity {
          startMinute = mIntent.getIntExtra("startMinute",0);
          event = mIntent.getStringExtra("event");
          date = mIntent.getStringExtra("date");
-        Log.d("start time: " , startHour + ":" + startMinute);
-        Log.d( "end time: " ,  endHour + ":" + endMinute);
-        Log.d("event: ", " " + event);
-        Log.d("date: ", " " + date);
         // after they've selected a time
 
 
@@ -57,18 +52,15 @@ public class EndTimeSchedulePage extends AppCompatActivity {
         });
     }
     public void sendData(){
-        Intent myIntent = new Intent(this, ParseClass.class);
-        myIntent.putExtra("startHour", startHour);
-        myIntent.putExtra("startMinute", startMinute);
-        myIntent.putExtra("endHour", endHour);
-        myIntent.putExtra("endMinute", endMinute);
-        myIntent.putExtra("event", event);
-        myIntent.putExtra("date", date);
-        startActivity(myIntent);
+        Intent mIntent = new Intent(this, InsertEvent.class);
+
+         mIntent.putExtra("startHour", startHour);
+        mIntent.putExtra("startMinute", startMinute);
+       mIntent.putExtra("endHour", endHour);
+        mIntent.putExtra("endMinute", endMinute);
+        mIntent.putExtra("event", event);
+        mIntent.putExtra("date", date);
+        startActivity(mIntent);
     }
-  /*
-        Log.d("start time: " , startHour + ":" + startMinute);
-        Log.d( "end time: " ,  endHour + ":" + endMinute);
-        Log.d("event: ", " " + event);
-        Log.d("date: ", " " + date);*/
+
 }

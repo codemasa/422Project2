@@ -1,62 +1,53 @@
 package project2.ontrck;
 
-import java.util.Calendar;
-
 /**
- * Created by songkaiyu on 5/30/17.
+ * Created by Talaba on 5/26/17.
  */
 
 public class Event {
 
-    private Calendar DMY;
-    private String Name;
-    private Calendar Start;
-    private Calendar End;
-
+    int day, month, year;
+    int[] startTime = {0,0};
+    int[] endTime = {0,0};
+    String eventName;
     public Event(){
-        DMY = null;
-        Name = null;
-        Start = null;
-        End = null;
+        day = 0;
+        month = 0;
+        year = 0;
+        eventName = "hasnt been set yet :(";
     }
-
-    public void SetDate(Calendar dmy){
-        DMY = dmy;
+    public String getEventName(){
+        return eventName;
     }
-
-    public void SetStartTime(Calendar start){
-        Start = start;
+    public int getDay(){
+        return day;
     }
-
-    public void SetEndTime(Calendar end){
-        End = end;
+    public int getMonth(){
+        return month;
     }
-
-    public void SetName(String name){
-        Name = name;
+    public int getYear(){
+        return year;
     }
-
-    public String GetName(){
-        return Name;
+    public int[] getStartTime(){
+        return startTime;
     }
-
-    public Calendar GetStartTime(){
-        return Start;
+    public int[] getEndTime(){
+        return endTime;
     }
-
-    public Calendar GetEndTime(){
-        return End;
+    public void setStartTime(int[] _time){
+        startTime = _time;
     }
-
-    public  Calendar GetDate(){
-        return DMY;
+    public void setEndTime(int[] _time){startTime = _time; }
+    public void setDay(int _day){
+        day = _day;
     }
-
-    public boolean After(Event e){
-        return Start.after(e.GetEndTime());
+    public void setMonth(int _month){
+        month = _month;
     }
-
-    public boolean Before(Event e){
-        return End.before(e.GetStartTime());
+    public void setYear(int _year){
+        year = _year;
+    }
+    public void setEventName(String _eventName){
+        eventName = _eventName;
     }
 }
