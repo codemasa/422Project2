@@ -1,58 +1,62 @@
 package project2.ontrck;
 
+import java.util.Calendar;
+
 /**
- * Created by Talaba on 5/26/17.
+ * Created by songkaiyu on 5/30/17.
  */
 
 public class Event {
 
-    int day, month, year;
-    int[] startTime, endTime;
-    String eventName;
+    private Calendar DMY;
+    private String Name;
+    private Calendar Start;
+    private Calendar End;
+
     public Event(){
-        day = 0;
-        month = 0;
-        year = 0;
-        startTime[0] = 0;
-        startTime[1] = 0;
-        endTime[0] = 0;
-        endTime[1] = 0;
-        eventName = "hasnt been set yet :(";
-    }/*
-    public String getEventName(){
-        return eventName;
+        DMY = null;
+        Name = null;
+        Start = null;
+        End = null;
     }
-    public int getDay(){
-        return day;
+
+    public void SetDate(Calendar dmy){
+        DMY = dmy;
     }
-    public int getMonth(){
-        return month;
+
+    public void SetStartTime(Calendar start){
+        Start = start;
     }
-    public int getYear(){
-        return year;
+
+    public void SetEndTime(Calendar end){
+        End = end;
     }
-    public int[] getStartTime(){
-        return startTime;
+
+    public void SetName(String name){
+        Name = name;
     }
-    public int[] getEndTime(){
-        return endTime;
+
+    public String GetName(){
+        return Name;
     }
-    public void setStartTime(int[] _time){
-        startTime = _time;
+
+    public Calendar GetStartTime(){
+        return Start;
     }
-    public void setEndTime(int[] _time){
-        startTime = _time;
+
+    public Calendar GetEndTime(){
+        return End;
     }
-    public void setDay(int _day){
-        day = _day;
+
+    public  Calendar GetDate(){
+        return DMY;
     }
-    public void setMonth(int _month){
-        month = _month;
+
+    public boolean After(Event e){
+        return Start.after(e.GetEndTime());
     }
-    public void setYear(int _year){
-        year = _year;
+
+    public boolean Before(Event e){
+        return End.before(e.GetStartTime());
     }
-    public void setEventName(String _eventName){
-        eventName = _eventName;
-    }*/
 }
