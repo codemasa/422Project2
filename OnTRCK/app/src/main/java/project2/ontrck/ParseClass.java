@@ -28,20 +28,18 @@ public class ParseClass extends AppCompatActivity {
         event = mIntent.getStringExtra("event");
         date = mIntent.getStringExtra("date");
 
-         startTime[0] = startHour;
-         startTime[1] = startMinute;
+        startTime[0] = startHour;
+        startTime[1] = startMinute;
         endTime[0] = endHour;
         endTime[1] = endMinute;
 
-
         insert.setInformation(date,event,startTime,endTime);
         goBackToMain();
-
     }
+
     public void goBackToMain(){
         Toast.makeText(getApplicationContext(), event + " Scheduled ", Toast.LENGTH_SHORT).show();
         Intent myIntent = new Intent(this, MainActivity.class);
         startActivity(myIntent);
-
     }
 }

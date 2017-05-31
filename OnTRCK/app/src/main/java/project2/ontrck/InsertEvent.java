@@ -14,7 +14,11 @@ public class InsertEvent {
     public void setInformation(String date, String _event, int[] _startTime, int[] _endTime) {
         if(NameSearch(_event)){
             int[] d = Deal(date);
-            Event event = new Event(Date(d), _event, Time(d, _startTime), Time(d, _endTime));
+            Event event = new Event();
+            event.SetDate(Date(d));
+            event.SetName(_event);
+            event.SetStartTime(Time(d, _startTime));
+            event.SetEndTime(Time(d, _endTime));
             if(TimeCheck(event)){
                 EventList.add(event);
             }
@@ -45,7 +49,7 @@ public class InsertEvent {
 
     public boolean NameSearch(String name){
         for(int i = 0; i < EventList.size(); i++){
-            if(EventList.get(i).GetName() == name){
+            if(EventList.get(i).GetName().equals(name)){
                 return false;
             }
         }
@@ -60,6 +64,7 @@ public class InsertEvent {
         }
         return result;
     }
+
     public ArrayList<Event> GetEventList(){
         return EventList;
     }

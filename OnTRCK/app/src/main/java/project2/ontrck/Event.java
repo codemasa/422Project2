@@ -13,11 +13,11 @@ public class Event {
     private Calendar Start;
     private Calendar End;
 
-    public Event(Calendar dmy, String name, Calendar start, Calendar end){
-        DMY = dmy;
-        Name = name;
-        Start = start;
-        End = end;
+    public Event(){
+        DMY = null;
+        Name = null;
+        Start = null;
+        End = null;
     }
 
     public void SetDate(Calendar dmy){
@@ -53,7 +53,7 @@ public class Event {
     }
 
     public boolean After(Event e){
-        return Start.after(e.GetStartTime());
+        return Start.after(e.GetEndTime());
     }
 
     public boolean Before(Event e){
