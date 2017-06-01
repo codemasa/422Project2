@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 
 /**
@@ -51,7 +52,13 @@ public class SecondSchedulePage extends AppCompatActivity {
                 Log.d("event: ", "->" + event);
 
                // endTime.setInformation(startHour, startMinute, date);
-                openEndSchedulePage();
+
+                if (event.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Please enter an event name!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    openEndSchedulePage();
+                }
             }
         });
 
