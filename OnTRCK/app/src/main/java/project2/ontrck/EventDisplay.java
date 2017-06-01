@@ -46,55 +46,37 @@ public class EventDisplay extends AppCompatActivity {
         String json = sharedPrefs.getString("calendar", null);
         Type type = new TypeToken<ArrayList<Event>>() {
         }.getType();
-        calendar = gson.fromJson(json, type);
+        ArrayList<Event> arrayList = gson.fromJson(json, type);
+        ArrayList<Event> dayArray = new ArrayList<Event>();
 
-        // now to loop through the calendar and grab any events on that day
-        for(int i = 0; i < calendar.size(); i++){
-            String _date = calendar.get(i).getDay() + " " +  calendar.get(i).getMonth() + " " + calendar.get(i).getYear();
-
-            // lots of conditions ! the reason for this is too allow for nice output layout
-            if(date.compareTo(_date) == 0){
-                if(i == 0){
-                    events[i] = calendar.get(i).getEventName();
-                }
-                else {
-                    if (events[i - 1].compareTo("nothing scheduled") == 0) {
-                        events[i - 1] = calendar.get(i).getEventName();
-                    } else {
-                        events[i] = calendar.get(i).getEventName();
-                    }
-                }
+        for (int i = 0 ; i < arrayList.size() ; i++){
+            int currentDay = arrayList.get(i).getDay();
+            int currentMonth = arrayList.get(i).getMonth();
+            int currentYear = arrayList.get(i).getYear();
+            String currentDate = (Integer.toString(currentDay) + " " + Integer.toString(currentMonth) + " " + Integer.toString(currentYear));
+            if (currentDate.compareTo(date) == 0) {
+                dayArray.add(arrayList.get(i));
             }
         }
-
-       String[] menuItems = new String[]{events[0], events[1], events[2], events[3], events[4], events[5], events[6],events[7],events[8]};
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, menuItems);
-        listView.setAdapter(adapter);
-        ListView myListView = (ListView) findViewById(R.id.display_list_view);
-        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(android.widget.AdapterView<?> parent, View view, int position, long id) {
-                Log.d("EventDisplay activity", "ListView item clicked.");
-
-                if (position == 0) {
-                    Intent myIntent = new Intent(EventDisplay.this, SchedulePage.class);
-                    //  myIntent.putExtra("key", value); //Optional parameters
-                    EventDisplay.this.startActivity(myIntent);
-                } else if (position == 1) {
-                    Intent myIntent = new Intent(EventDisplay.this, SearchPage.class);
-                    //  myIntent.putExtra("key", value); //Optional parameters
-                    EventDisplay.this.startActivity(myIntent);
-                } else if (position == 2) {
-                    Intent myIntent = new Intent(EventDisplay.this, SearchPage.class);
-                    //  myIntent.putExtra("key", value); //Optional parameters
-                    EventDisplay.this.startActivity(myIntent);
-                } else if (position == 4) {
-                    Intent myIntent = new Intent(EventDisplay.this, EventDisplay.class);
-                    //  myIntent.putExtra("key", value); //Optional parameters
-                    EventDisplay.this.startActivity(myIntent);
-                }
+        String [] eventArray = new String[dayArray.size()];
+        if(eventArray.length > 0) {
+            for (int i = 0; i < dayArray.size(); i++) {
+                eventArray[i] = dayArray.get(i).getEventName() + " From " +
+                        dayArray.get(i).getStartTime()[0] + ":" + dayArray.get(i).getStartTime()[1] +
+                        " to " + dayArray.get(i).getEndTime()[0] + ":" + dayArray.get(i).getEndTime()[1];
             }
-        });
+
+            ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, eventArray);
+            listView.setAdapter(adapter);
+            ListView myListView = (ListView) findViewById(R.id.display_list_view);
+        }
+        else {
+            String [] defaultArray = new String[] {"There are no events for the date of " + date + "!"};
+
+            ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, defaultArray);
+            listView.setAdapter(adapter);
+            ListView myListView = (ListView) findViewById(R.id.display_list_view);
+        }
     }
 }
 

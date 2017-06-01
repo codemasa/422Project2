@@ -30,19 +30,13 @@ public class SelectDayForDisplay extends AppCompatActivity {
                 month_ = month;
                 year_ = year;
                 date = (Integer.toString(day_) + " " + Integer.toString(month_) + " " + Integer.toString(year_));
-            }
-        });
-
-        inputDateButton.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.M)
-            @Override
-            public void onClick(View v) {
                 Intent myIntent = new Intent(SelectDayForDisplay.this, EventDisplay.class);
                 //im sending the date selected by the user over to the time input class
                 myIntent.putExtra("date", date); //Optional parameters
                 SelectDayForDisplay.this.startActivity(myIntent);
             }
         });
+
 
 
     }

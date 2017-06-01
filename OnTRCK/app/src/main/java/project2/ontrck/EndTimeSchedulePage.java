@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 /**
  * Created by talaba on 5/16/17.
@@ -41,12 +42,16 @@ public class EndTimeSchedulePage extends AppCompatActivity {
                 timePickerForSpecial = (TimePicker) findViewById(R.id.time_input);
                 endHour = timePickerForSpecial.getHour();
                 endMinute = timePickerForSpecial.getMinute();
-                if(endHour > startHour){
-
+                if(endHour < startHour){
+                    Toast.makeText(getApplicationContext(), "Please enter an hour after your start start!", Toast.LENGTH_SHORT).show();
                 }
-                // Toast.makeText(getApplicationContext(), "this is the time and event " + hour + " " + minute + " " + event + " ", Toast.LENGTH_SHORT).show();
-                sendData();
-
+                else if (endMinute < startMinute && startHour == endHour){
+                    Toast.makeText(getApplicationContext(), "Please enter an minute after your start minute!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    // Toast.makeText(getApplicationContext(), "this is the time and event " + hour + " " + minute + " " + event + " ", Toast.LENGTH_SHORT).show();
+                    sendData();
+                }
 
             }
         });
