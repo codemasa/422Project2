@@ -39,13 +39,13 @@ public class InsertEvent extends AppCompatActivity {
         eventName = mIntent.getStringExtra("event");
         date = mIntent.getStringExtra("date");
 
-        setInformation(date, eventName, startTime, endTime);
+
 
         startTime[0] = startHour;
         startTime[1] = startMinute;
         endTime[0] = endHour;
         endTime[1] = endMinute;
-
+        setInformation(date, eventName, startTime, endTime);
         goBackToMain();
     }
 
@@ -55,10 +55,7 @@ public class InsertEvent extends AppCompatActivity {
         Gson gson = new Gson();
         String json = sharedPrefs.getString("calendar", null);
         Type type = new TypeToken<ArrayList<Event>>() {}.getType();
-        ArrayList<Event> arrayList = gson.fromJson(json, type);
 
-
-        calendar = arrayList;
 
 
             Event event = new Event();

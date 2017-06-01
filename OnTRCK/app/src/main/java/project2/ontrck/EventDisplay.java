@@ -61,9 +61,25 @@ public class EventDisplay extends AppCompatActivity {
         String [] eventArray = new String[dayArray.size()];
         if(eventArray.length > 0) {
             for (int i = 0; i < dayArray.size(); i++) {
+                String currentStartH = Integer.toString(dayArray.get(i).getStartTime()[0]);
+                String currentStartM = Integer.toString(dayArray.get(i).getStartTime()[1]);
+                String currentEndH = Integer.toString(dayArray.get(i).getEndTime()[0]);
+                String currentEndM = Integer.toString(dayArray.get(i).getStartTime()[0]);
+                if (dayArray.get(i).getStartTime()[0] < 10){
+                    currentStartH = "0" + currentStartH;
+                }
+                if (dayArray.get(i).getStartTime()[1] < 10){
+                    currentStartM = "0" + currentStartM;
+                }
+                if (dayArray.get(i).getStartTime()[0] < 10){
+                    currentEndH = "0" + currentEndH;
+                }
+                if (dayArray.get(i).getStartTime()[0] < 10){
+                    currentEndM = "0" + currentEndM;
+                }
                 eventArray[i] = dayArray.get(i).getEventName() + " From " +
-                        dayArray.get(i).getStartTime()[0] + ":" + dayArray.get(i).getStartTime()[1] +
-                        " to " + dayArray.get(i).getEndTime()[0] + ":" + dayArray.get(i).getEndTime()[1];
+                        currentStartH + ":" + currentStartM +
+                        " to " + currentEndH + ":" + currentEndM;
             }
 
             ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, eventArray);
