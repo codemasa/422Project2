@@ -29,10 +29,10 @@ For instructions on how to install this on your device please go [here](https://
 ## Extensibility 
 Extending this application is very easy if you know [Java](https://www.java.com/en/) and/or [Kotlin](https://kotlinlang.org), and can work with [Android Studio](https://developer.android.com/studio/index.html) or any other IDE
 
-If you want to know how this works, check the [design](./README.md) page
+If you want to know how this works, check the [design](https://github.com/codemasa/422Project2/blob/master/README.md) page
 
-For instructions on how to modify this application go [here](./README.md)
+For instructions on how to modify this application go [here](https://github.com/codemasa/422Project2/wiki/Instructions-on-Modding)
 
 ##
-## Troubleshooting 
+## Walkthrough and FAQ 
 If you want some troubleshooting tips and require a tutorial on the app, go [here](./README.md)
