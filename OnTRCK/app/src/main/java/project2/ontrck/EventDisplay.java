@@ -64,17 +64,17 @@ public class EventDisplay extends AppCompatActivity {
                 String currentStartH = Integer.toString(dayArray.get(i).getStartTime()[0]);
                 String currentStartM = Integer.toString(dayArray.get(i).getStartTime()[1]);
                 String currentEndH = Integer.toString(dayArray.get(i).getEndTime()[0]);
-                String currentEndM = Integer.toString(dayArray.get(i).getStartTime()[0]);
+                String currentEndM = Integer.toString(dayArray.get(i).getEndTime()[1]);
                 if (dayArray.get(i).getStartTime()[0] < 10){
                     currentStartH = "0" + currentStartH;
                 }
                 if (dayArray.get(i).getStartTime()[1] < 10){
                     currentStartM = "0" + currentStartM;
                 }
-                if (dayArray.get(i).getStartTime()[0] < 10){
+                if (dayArray.get(i).getEndTime()[0] < 10){
                     currentEndH = "0" + currentEndH;
                 }
-                if (dayArray.get(i).getStartTime()[0] < 10){
+                if (dayArray.get(i).getEndTime()[1] < 10){
                     currentEndM = "0" + currentEndM;
                 }
                 eventArray[i] = dayArray.get(i).getEventName() + " From " +
