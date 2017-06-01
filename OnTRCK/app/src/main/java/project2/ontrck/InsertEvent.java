@@ -24,8 +24,8 @@ public class InsertEvent extends AppCompatActivity {
     int startHour, startMinute, endHour, endMinute, day, month, year;
     String date, eventName;
 
-    int[] startTime = {0,0};
-    int[] endTime = {0,0};
+    int[] startTime = new int[2];
+    int[] endTime = new int[2];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +87,7 @@ public class InsertEvent extends AppCompatActivity {
          json = gson.toJson(calendar);
 
         editor.putString("calendar", json);
-        editor.commit();
+        editor.apply();
         printArrayList();
 
         //}

@@ -37,7 +37,7 @@ public class Event {
     public void setStartTime(int[] _time){
         startTime = _time;
     }
-    public void setEndTime(int[] _time){startTime = _time; }
+    public void setEndTime(int[] _time){endTime = _time; }
     public void setDay(int _day){
         day = _day;
     }
