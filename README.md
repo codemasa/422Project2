@@ -34,5 +34,5 @@ If you want to know how this works, check the [design](./README.md) page
 For instructions on how to modify this application go [here](./README.md)
 
 ##
-## Troubleshooting 
+## Walk Through and FAQ 
 If you want some troubleshooting tips and require a tutorial on the app, go [here](./README.md)
