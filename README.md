@@ -31,7 +31,7 @@ Extending this application is very easy if you know [Java](https://www.java.com/
 
 If you want to know how this works, check the [design](https://github.com/codemasa/422Project2/blob/master/README.md) page
 
-For instructions on how to modify this application go [here](./README.md)
+For instructions on how to modify this application go [here](https://github.com/codemasa/422Project2/wiki/Instructions-on-Modding)
 
 ##
 ## Walkthrough and FAQ 
