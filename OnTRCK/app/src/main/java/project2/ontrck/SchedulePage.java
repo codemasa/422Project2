@@ -30,6 +30,12 @@ public class SchedulePage extends AppCompatActivity {
                 month_ = month;
                 year_ = year;
                 date = (Integer.toString(day_) + " " + Integer.toString(month_) + " " + Integer.toString(year_));
+
+                Intent myIntent = new Intent(SchedulePage.this, SecondSchedulePage.class);
+                //im sending the date selected by the user over to the time input class
+                myIntent.putExtra("date", date); //Optional parameters
+
+                SchedulePage.this.startActivity(myIntent);
             }
         });
 

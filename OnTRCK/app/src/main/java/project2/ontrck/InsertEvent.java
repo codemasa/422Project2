@@ -56,6 +56,8 @@ public class InsertEvent extends AppCompatActivity {
         String json = sharedPrefs.getString("calendar", null);
         Type type = new TypeToken<ArrayList<Event>>() {}.getType();
         ArrayList<Event> arrayList = gson.fromJson(json, type);
+
+
         calendar = arrayList;
 
 
