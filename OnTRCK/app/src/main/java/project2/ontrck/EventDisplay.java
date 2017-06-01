@@ -81,18 +81,18 @@ public class EventDisplay extends AppCompatActivity {
     public void getEventsOnDate(ArrayList<Event> calendar) {
         String events = " ";
         for (int i = 0; i < calendar.size(); i++) {
-            storedDate = calendar.get(i).getDay() + " " + calendar.get(i).getMonth() + " " + calendar.get(i).getYear();
-            Log.d("date from list: " , storedDate);
-            Log.d("date from intent: ", date + " ");
+           // storedDate = calendar.get(i).getDay() + " " + calendar.get(i).getMonth() + " " + calendar.get(i).getYear();
+            Log.d("date from list: " , calendar.get(i).getMonth() + " ");
 
-            if (storedDate.compareTo(date) == 0) {
 
-                events += " " + i;
-                Log.d("hit: ", calendar.get(i).eventName);
+           // if (storedDate.compareTo(date) == 0) {
 
-            }
+             //   events += " " + i;
+             //   Log.d("hit: ", calendar.get(i).eventName);
+
+           // }
         }
-        Log.d("no hit", "here ");
+
 
     }
 }

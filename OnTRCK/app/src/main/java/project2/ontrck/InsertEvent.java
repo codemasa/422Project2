@@ -57,11 +57,20 @@ public class InsertEvent extends AppCompatActivity {
         Type type = new TypeToken<ArrayList<Event>>() {}.getType();
         ArrayList<Event> arrayList = gson.fromJson(json, type);
         calendar = arrayList;
+
+
             Event event = new Event();
+            Log.d("this is date!: ", date );
             String[] splitDate = date.split("\\s+");
+
             day = Integer.parseInt(splitDate[0]);
+            Log.d("this is day: ", day + " ");
             month = Integer.parseInt(splitDate[1]);
+            Log.d("this is month: ", month + " ");
             year = Integer.parseInt(splitDate[2]);
+
+
+
             event.setDay(day);
             event.setMonth(month);
             event.setYear(year);
