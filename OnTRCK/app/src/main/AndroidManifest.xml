@@ -17,10 +17,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="SecondSchedulePage" />
+        <activity android:name="SecondSchedulePage" 
+                  android:screenOrientation="portrait"
+                  android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity android:name="SearchPage"/>
         <activity android:name="SchedulePage"/>
-        <activity android:name="EndTimeSchedulePage" />
+        <activity android:name="EndTimeSchedulePage" 
+                  android:screenOrientation="portrait"
+                  android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity android:name="EventDisplay" />
         <activity android:name="InsertEvent" />
         <activity android:name="SelectDayForDisplay" />
