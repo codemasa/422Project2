@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = (ListView) findViewById(R.id.calendar_list_view);
-        String [] menuItems = new String[]{"Schedule Appointment","Schedule a range of Appointments","Search for an Appointment", "Delete Appointment", "Show schedule"};
+        String [] menuItems = new String[]{"Schedule Appointment","Schedule a range of Appointments","Search for an Appointment", "Delete Appointment", "Show Schedule"};
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, menuItems);
         listView.setAdapter(adapter);
         ListView myListView = (ListView) findViewById(R.id.calendar_list_view);
