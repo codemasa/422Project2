@@ -35,4 +35,4 @@ For instructions on how to modify this application go [here](https://github.com/
 
 ##
 ## Walkthrough and FAQ 
-If you want some troubleshooting tips and require a tutorial on the app, go [here](./README.md)
+If you want some troubleshooting tips and require a tutorial on the app, go [here](https://github.com/codemasa/422Project2/wiki/Walkthrough)
