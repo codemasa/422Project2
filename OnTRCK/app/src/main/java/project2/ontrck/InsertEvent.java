@@ -53,7 +53,8 @@ public class InsertEvent extends AppCompatActivity {
         if(!sharedPrefs.contains("initialized")) {
             ed = sharedPrefs.edit();
             ed.putBoolean("initialized", true);
-
+            ed.putString("initialization", "check");
+            ed.commit();
             Gson gson = new Gson();
             String json = sharedPrefs.getString("calendar", null);
             Type type = new TypeToken<ArrayList<Event>>() {
