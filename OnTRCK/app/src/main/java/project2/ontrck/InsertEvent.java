@@ -50,7 +50,7 @@ public class InsertEvent extends AppCompatActivity {
     public void setInformation(String date, String _event, int[] _startTime, int[] _endTime) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         SharedPreferences.Editor ed;
-        if(count > 1) {
+        if(count > 0) {
 
             Gson gson = new Gson();
             String json = sharedPrefs.getString("calendar", null);
