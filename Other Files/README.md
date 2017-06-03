@@ -7,6 +7,7 @@
 ##  
 ## Some notes about our project:
 * Due to some Git issues we often found it easiest to work on the project seperately and then bring any completed code to the team meeting to be compared, compiled, and commited from a single computer. 
+* The two folders in this directory are our work in progress contain two features that we were working on but were not yet able to implement. Namely, Google Calendar api and voice recognition.
 * Adding the Google calendar API should be "easy enough" if you are familiar with Android and/or Java. This would be just for adding Google events into our app. Create a java file in the `422Project2/OnTRCK/app/src/main/java/project2/ontrck/` folder, make a reference to this file in the AndroidManifest.xml file found at `422Project2/OnTRCK/app/src/main/` and add a reference to your java file in the MainActivity.java file under the `onItemClick` function. The required java code should be avaialble under the folder `422Project2/Other Files/test_google_calendar/app/src/main/java/com/example/quickstart/`
 
 ##   
