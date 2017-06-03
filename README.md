@@ -39,5 +39,5 @@ If you want some troubleshooting tips and require a tutorial on the app, go [her
 
 ##   
 ## Other and etc.
-If you want to check out some of the things we're working on or just some of our notes go [here](https://github.com/codemasa/422Project2/tree/master/Other%20Files)
+If you want to check out some of the things we're working on or just some of our notes go [here](https://github.com/codemasa/422Project2/tree/master/Other%20Files)  
 (There's pictures! Boring, boring pictures!)
