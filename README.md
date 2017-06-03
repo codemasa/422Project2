@@ -36,3 +36,8 @@ For instructions on how to modify this application go [here](https://github.com/
 ##
 ## Walkthrough and FAQ 
 If you want some troubleshooting tips and require a tutorial on the app, go [here](https://github.com/codemasa/422Project2/wiki/Walkthrough)
+
+##   
+## Other and etc.
+If you want to check out some of the things we're working on or just some of our notes go [here](https://github.com/codemasa/422Project2/tree/master/Other%20Files)
+(There's pictures! Boring, boring pictures!)
