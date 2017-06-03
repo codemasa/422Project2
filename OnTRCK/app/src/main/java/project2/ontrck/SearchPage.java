@@ -12,14 +12,18 @@ import android.widget.Toast;
  */
 
 public class SearchPage extends AppCompatActivity {
+    // this class has not been put into the main project because it simply takes input and
+    // hasnt been implemented to manipulate and search yet
+    // this class is just a work in progress
+    // one could easily just grab preferences then navigate through the array and find the inputed input
+    // then they would need to implement a display page
+
+
     String eventName;
     EditText eventInput;
-    EditText dateInput;
-    InsertEvent data = new InsertEvent();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_page);

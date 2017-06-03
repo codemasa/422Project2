@@ -7,12 +7,6 @@
     <CalendarView
         android:id="@+id/simpleCalendarView"
         android:layout_width="fill_parent"
-        android:layout_height="453dp" />
-
-    <Button
-        android:id="@+id/select_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="View This Date" />
+        android:layout_height="match_parent" />
 
 </LinearLayout>

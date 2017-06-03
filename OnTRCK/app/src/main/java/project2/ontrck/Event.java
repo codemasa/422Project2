@@ -16,6 +16,7 @@ public class Event {
         year = 0;
         eventName = "hasnt been set yet :(";
     }
+    // if someone wanted to add more scheduling aspects they can insert here, such as priority
     public String getEventName(){
         return eventName;
     }

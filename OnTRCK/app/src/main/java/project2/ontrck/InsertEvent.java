@@ -6,13 +6,11 @@ import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Array;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
@@ -24,7 +22,7 @@ public class InsertEvent extends AppCompatActivity {
     ArrayList<Event> calendar = new ArrayList<Event>();
     int startHour, startMinute, endHour, endMinute, day, month, year;
     String date, eventName;
-
+    // they only need 2 items because they are 2 digit time numbers for ex: 12:30
     int[] startTime = new int[2];
     int[] endTime = new int[2];
 
@@ -62,18 +60,16 @@ public class InsertEvent extends AppCompatActivity {
 
         Event event = new Event();
         String[] splitDate = date.split("\\s+");
+        // so the date comes as a string now we will parse it to more specific information
+        // it was in the form dd mm yyyy
         day = Integer.parseInt(splitDate[0]);
         month = Integer.parseInt(splitDate[1]);
         year = Integer.parseInt(splitDate[2]);
 
-
-
         event.setDay(day);
         event.setMonth(month);
         event.setYear(year);
-
         event.setEventName(eventName);
-
         event.setStartTime(startTime);
         event.setEndTime(endTime);
 
@@ -82,45 +78,11 @@ public class InsertEvent extends AppCompatActivity {
         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         Editor editor = sharedPrefs.edit();
         gson = new Gson();
-
          json = gson.toJson(calendar);
-
         editor.putString("calendar", json);
         editor.apply();
-        printArrayList();
-
-        //}
     }
-
-
-    /*public boolean NameSearch(String name) {
-        for (int i = 0; i < calendar.size(); i++) {
-            if (calendar.get(i).getEventName().equals(name)) {
-                return false;
-            }
-        }
-        return true;
-    }*/
-
-
-    public void printArrayList(){
-
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        Gson gson = new Gson();
-        String json = sharedPrefs.getString("calendar", null);
-        Type type = new TypeToken<ArrayList<Event>>() {}.getType();
-        ArrayList<Event> arrayList = gson.fromJson(json, type);
-
-        for(int i = 0; i < arrayList.size(); i++) {
-            Log.d("the size of calendar: ", calendar.size()+ " ");
-            Log.d("the event : " + calendar.get(i).getEventName(), " <--");
-        }
-
-            //return preferences;
-        }
-
     public void goBackToMain(){
-
         Toast.makeText(getApplicationContext(), eventName + " Scheduled ", Toast.LENGTH_SHORT).show();
         Intent myIntent = new Intent(this, MainActivity.class);
         startActivity(myIntent);

@@ -5,7 +5,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,22 +20,17 @@ public class SecondSchedulePage extends AppCompatActivity {
 
     String date;
     String event;
-    int startHour, startMinute, endHour, endMinute;
-    //EndTimeSchedulePage endTime = new EndTimeSchedulePage();
-
+    int startHour, startMinute;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second_schedule_page);
 
-
-
-        Intent mIntent = getIntent();                                     //getting date from date class
+        Intent mIntent = getIntent();                 //getting date from date class
         date = mIntent.getStringExtra("date");
 
-        Button submitButton = (Button) findViewById(R.id.submit_button);  // after theyve selected a time
-
+        Button submitButton = (Button) findViewById(R.id.submit_button);  // after they've selected a time
         submitButton.setOnClickListener(new View.OnClickListener() {
 
             @RequiresApi(api = Build.VERSION_CODES.M)
@@ -49,9 +43,6 @@ public class SecondSchedulePage extends AppCompatActivity {
                 startMinute = timePickerForSpecial.getMinute();
                 EditText eventInput = (EditText)findViewById(R.id.event_input);
                 event = eventInput.getText().toString();
-                Log.d("event: ", "->" + event);
-
-               // endTime.setInformation(startHour, startMinute, date);
 
                 if (event.isEmpty()){
                     Toast.makeText(getApplicationContext(), "Please enter an event name!", Toast.LENGTH_SHORT).show();
@@ -61,11 +52,8 @@ public class SecondSchedulePage extends AppCompatActivity {
                 }
             }
         });
-
-
     }
     public void openEndSchedulePage(){
-
         Intent myIntent = new Intent(this, EndTimeSchedulePage.class);
         myIntent.putExtra("startHour", startHour);
         myIntent.putExtra("startMinute", startMinute);

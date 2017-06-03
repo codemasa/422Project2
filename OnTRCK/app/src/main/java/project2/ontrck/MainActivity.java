@@ -20,7 +20,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = (ListView) findViewById(R.id.calendar_list_view);
-        String [] menuItems = new String[]{"Schedule Appointment","Schedule a range of Appointments","Search for an Appointment", "Delete Appointment", "Show Schedule"};
+
+        //if you want to add items to the main page insert below, simply add them after "show schedule"
+        //these will imediately display on the home screen, then below add more if conditions
+        String [] menuItems = new String[]{"Schedule Appointment", "Show Schedule"};
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, menuItems);
         listView.setAdapter(adapter);
         ListView myListView = (ListView) findViewById(R.id.calendar_list_view);
@@ -29,26 +32,20 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(android.widget.AdapterView<?> parent, View view, int position, long id) {
                 Log.d("MainActivity", "ListView item clicked.");
 
+
+                //here is where you would add if statements to extend your home screen item selection
                 if (position == 0) {
                     Intent myIntent = new Intent(MainActivity.this, SchedulePage.class);
                   //  myIntent.putExtra("key", value); //Optional parameters
                     MainActivity.this.startActivity(myIntent);
                 }
                 else if(position == 1){
-                    Intent myIntent = new Intent(MainActivity.this, SearchPage.class);
-                    //  myIntent.putExtra("key", value); //Optional parameters
-                    MainActivity.this.startActivity(myIntent);
-                }
-                else if(position == 2){
-                    Intent myIntent = new Intent(MainActivity.this, SearchPage.class);
-                    //  myIntent.putExtra("key", value); //Optional parameters
-                    MainActivity.this.startActivity(myIntent);
-                }
-                else if(position == 4){
                     Intent myIntent = new Intent(MainActivity.this, SelectDayForDisplay.class);
                     //  myIntent.putExtra("key", value); //Optional parameters
                     MainActivity.this.startActivity(myIntent);
                 }
+                //ex: position == 2 will be the new third item handler
+                //insert other options such as google api here
 
             }
         });

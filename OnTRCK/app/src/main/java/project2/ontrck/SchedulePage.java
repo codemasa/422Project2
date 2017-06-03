@@ -1,12 +1,8 @@
 package project2.ontrck;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
 import android.widget.CalendarView;
 /**
  * Created by talaba on 5/16/17.
@@ -19,7 +15,6 @@ public class SchedulePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.schedule_page);
-        Button inputDateButton = (Button)findViewById(R.id.inputDateButton);
         final CalendarView calendar = (CalendarView) findViewById(R.id.simpleCalendarView); // get the reference of CalendarView
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
 
@@ -38,19 +33,5 @@ public class SchedulePage extends AppCompatActivity {
                 SchedulePage.this.startActivity(myIntent);
             }
         });
-
-        inputDateButton.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.M)
-            @Override
-            public void onClick(View v) {
-                Intent myIntent = new Intent(SchedulePage.this, SecondSchedulePage.class);
-                //im sending the date selected by the user over to the time input class
-                myIntent.putExtra("date", date); //Optional parameters
-
-                SchedulePage.this.startActivity(myIntent);
-            }
-        });
-
-
     }
 }

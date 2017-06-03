@@ -28,6 +28,7 @@
         <activity android:name="EventDisplay" />
         <activity android:name="InsertEvent" />
         <activity android:name="SelectDayForDisplay" />
+        <activity android:name="DeletePage"/>
 
 
 
