@@ -25,6 +25,7 @@ public class InsertEvent extends AppCompatActivity {
     // they only need 2 items because they are 2 digit time numbers for ex: 12:30
     int[] startTime = new int[2];
     int[] endTime = new int[2];
+    int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,14 +50,41 @@ public class InsertEvent extends AppCompatActivity {
     }
 
     public void setInformation(String date, String _event, int[] _startTime, int[] _endTime) {
-     //   if (NameSearch(_event)) {
+    if(count > 0) {
+
+
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         Gson gson = new Gson();
         String json = sharedPrefs.getString("calendar", null);
-        Type type = new TypeToken<ArrayList<Event>>() {}.getType();
+        Type type = new TypeToken<ArrayList<Event>>() {
+        }.getType();
         ArrayList<Event> arrayList = gson.fromJson(json, type);
         calendar = arrayList;
+        count++;
+        Event event = new Event();
+        String[] splitDate = date.split("\\s+");
+        // so the date comes as a string now we will parse it to more specific information
+        // it was in the form dd mm yyyy
+        day = Integer.parseInt(splitDate[0]);
+        month = Integer.parseInt(splitDate[1]);
+        year = Integer.parseInt(splitDate[2]);
 
+        event.setDay(day);
+        event.setMonth(month);
+        event.setYear(year);
+        event.setEventName(eventName);
+        event.setStartTime(startTime);
+        event.setEndTime(endTime);
+
+        calendar.add(event);
+
+         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        Editor editor = sharedPrefs.edit();
+         gson = new Gson();
+        json = gson.toJson(calendar);
+        editor.putString("calendar", json);
+        editor.apply();
+    }else {
 
         Event event = new Event();
         String[] splitDate = date.split("\\s+");
@@ -75,12 +103,14 @@ public class InsertEvent extends AppCompatActivity {
 
         calendar.add(event);
 
-        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         Editor editor = sharedPrefs.edit();
-        gson = new Gson();
-         json = gson.toJson(calendar);
+        Gson gson = new Gson();
+        String json = gson.toJson(calendar);
         editor.putString("calendar", json);
         editor.apply();
+    }
     }
     public void goBackToMain(){
         Toast.makeText(getApplicationContext(), eventName + " Scheduled ", Toast.LENGTH_SHORT).show();
