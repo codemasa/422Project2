@@ -4,6 +4,12 @@
 * Work in Progress
 
   
+##  
+## Some notes about our project:
+* Due to some Git issues we often found it easiest to work on the project seperately and then bring any completed code to the team meeting to be compared, compiled, and commited from a single computer. 
+* 
+
+
 ##   
 ## These are all of the notes I could find:
 
