@@ -56,6 +56,9 @@ public class InsertEvent extends AppCompatActivity {
         if(!sharedPrefs.contains("initialized")) {
             ed = sharedPrefs.edit();
             ed.putBoolean("initialized", true);
+<<<<<<< HEAD
+>>>>>>> parent of b3eb37a... change
+=======
 >>>>>>> parent of b3eb37a... change
 
             Gson gson = new Gson();
