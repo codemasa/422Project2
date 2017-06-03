@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
@@ -55,32 +56,30 @@ public class InsertEvent extends AppCompatActivity {
         Gson gson = new Gson();
         String json = sharedPrefs.getString("calendar", null);
         Type type = new TypeToken<ArrayList<Event>>() {}.getType();
+        ArrayList<Event> arrayList = gson.fromJson(json, type);
+        calendar = arrayList;
+
+
+        Event event = new Event();
+        String[] splitDate = date.split("\\s+");
+        day = Integer.parseInt(splitDate[0]);
+        month = Integer.parseInt(splitDate[1]);
+        year = Integer.parseInt(splitDate[2]);
 
 
 
-            Event event = new Event();
-            Log.d("this is date!: ", date );
-            String[] splitDate = date.split("\\s+");
+        event.setDay(day);
+        event.setMonth(month);
+        event.setYear(year);
 
-            day = Integer.parseInt(splitDate[0]);
-            Log.d("this is day: ", day + " ");
-            month = Integer.parseInt(splitDate[1]);
-            Log.d("this is month: ", month + " ");
-            year = Integer.parseInt(splitDate[2]);
+        event.setEventName(eventName);
 
+        event.setStartTime(startTime);
+        event.setEndTime(endTime);
 
+        calendar.add(event);
 
-            event.setDay(day);
-            event.setMonth(month);
-            event.setYear(year);
-
-            event.setEventName(eventName);
-
-            event.setStartTime(startTime);
-            event.setEndTime(endTime);
-
-                calendar.add(event);
-         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         Editor editor = sharedPrefs.edit();
         gson = new Gson();
 
