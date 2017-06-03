@@ -50,7 +50,13 @@ public class InsertEvent extends AppCompatActivity {
     public void setInformation(String date, String _event, int[] _startTime, int[] _endTime) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         SharedPreferences.Editor ed;
+<<<<<<< HEAD
         if(count > 0) {
+=======
+        if(!sharedPrefs.contains("initialized")) {
+            ed = sharedPrefs.edit();
+            ed.putBoolean("initialized", true);
+>>>>>>> parent of b3eb37a... change
 
             Gson gson = new Gson();
             String json = sharedPrefs.getString("calendar", null);
