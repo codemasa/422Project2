@@ -5,13 +5,13 @@
 ## 422 Project 2
 
 ### Team Members:
- - [Talaba Pogrebinsky](https://github.com/pogrebinsky2010)
+ - [Talaba Pogrebinsky](https://github.com/pogrebinsky2010) - Pragmatic Programmer and Layout Lead
  
- - [Cody Abe](https://github.com/codemasa)
+ - [Cody Abe](https://github.com/codemasa) - Design Dude and Programming Prestidigitator 
  
- - [Kaiyu Song](https://github.com/kaiyus)
+ - [Kaiyu Song](https://github.com/kaiyus) - Awesome Algorithms and Java Journeyman
  
- - [Ryan Collier](https://github.com/FidgetYou)
+ - [Ryan Collier](https://github.com/FidgetYou) - Still here
 ##
 This Android app will help you schedule and reschedule all of everything!
 
