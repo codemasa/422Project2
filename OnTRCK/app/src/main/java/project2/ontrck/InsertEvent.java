@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
-
+import android.util.Log;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -49,6 +49,8 @@ public class InsertEvent extends AppCompatActivity {
 
     public void setInformation(String date, String _event, int[] _startTime, int[] _endTime) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+<<<<<<< HEAD
+=======
         SharedPreferences.Editor ed;
 <<<<<<< HEAD
         if(count > 0) {
@@ -60,7 +62,11 @@ public class InsertEvent extends AppCompatActivity {
 >>>>>>> parent of b3eb37a... change
 =======
 >>>>>>> parent of b3eb37a... change
+>>>>>>> 2d98ddc413810e66f501476d84b07a36d62f0363
 
+
+        if(sharedPrefs.contains("calendar")) {
+            sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             Gson gson = new Gson();
             String json = sharedPrefs.getString("calendar", null);
             Type type = new TypeToken<ArrayList<Event>>() {
@@ -92,7 +98,7 @@ public class InsertEvent extends AppCompatActivity {
         editor.putString("calendar", json);
         editor.apply();
     }else {
-
+            Log.d("made it!", " ");
         Event event = new Event();
         String[] splitDate = date.split("\\s+");
         // so the date comes as a string now we will parse it to more specific information
@@ -109,7 +115,6 @@ public class InsertEvent extends AppCompatActivity {
         event.setEndTime(endTime);
 
         calendar.add(event);
-
 
         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         Editor editor = sharedPrefs.edit();
