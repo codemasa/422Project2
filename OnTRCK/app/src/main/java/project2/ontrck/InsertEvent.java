@@ -39,8 +39,6 @@ public class InsertEvent extends AppCompatActivity {
         eventName = mIntent.getStringExtra("event");
         date = mIntent.getStringExtra("date");
 
-
-
         startTime[0] = startHour;
         startTime[1] = startMinute;
         endTime[0] = endHour;
@@ -50,33 +48,35 @@ public class InsertEvent extends AppCompatActivity {
     }
 
     public void setInformation(String date, String _event, int[] _startTime, int[] _endTime) {
-    if(count > 0) {
-
-
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        Gson gson = new Gson();
-        String json = sharedPrefs.getString("calendar", null);
-        Type type = new TypeToken<ArrayList<Event>>() {
-        }.getType();
-        ArrayList<Event> arrayList = gson.fromJson(json, type);
-        calendar = arrayList;
-        count++;
-        Event event = new Event();
-        String[] splitDate = date.split("\\s+");
-        // so the date comes as a string now we will parse it to more specific information
-        // it was in the form dd mm yyyy
-        day = Integer.parseInt(splitDate[0]);
-        month = Integer.parseInt(splitDate[1]);
-        year = Integer.parseInt(splitDate[2]);
+        SharedPreferences.Editor ed;
+        if(!sharedPrefs.contains("initialized")) {
+            ed = sharedPrefs.edit();
+            ed.putBoolean("initialized", true);
 
-        event.setDay(day);
-        event.setMonth(month);
-        event.setYear(year);
-        event.setEventName(eventName);
-        event.setStartTime(startTime);
-        event.setEndTime(endTime);
+            Gson gson = new Gson();
+            String json = sharedPrefs.getString("calendar", null);
+            Type type = new TypeToken<ArrayList<Event>>() {
+            }.getType();
+            ArrayList<Event> arrayList = gson.fromJson(json, type);
+            calendar = arrayList;
+            count++;
+            Event event = new Event();
+            String[] splitDate = date.split("\\s+");
+            // so the date comes as a string now we will parse it to more specific information
+            // it was in the form dd mm yyyy
+            day = Integer.parseInt(splitDate[0]);
+            month = Integer.parseInt(splitDate[1]);
+            year = Integer.parseInt(splitDate[2]);
 
-        calendar.add(event);
+            event.setDay(day);
+            event.setMonth(month);
+            event.setYear(year);
+            event.setEventName(eventName);
+            event.setStartTime(startTime);
+            event.setEndTime(endTime);
+
+            calendar.add(event);
 
          sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         Editor editor = sharedPrefs.edit();
@@ -104,7 +104,7 @@ public class InsertEvent extends AppCompatActivity {
         calendar.add(event);
 
 
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         Editor editor = sharedPrefs.edit();
         Gson gson = new Gson();
         String json = gson.toJson(calendar);

@@ -44,10 +44,10 @@ public class EndTimeSchedulePage extends AppCompatActivity {
                 endMinute = timePickerForSpecial.getMinute();
                 //error checking
                 if(endHour < startHour){
-                    Toast.makeText(getApplicationContext(), "Please enter an hour after your start start!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Please enter a end time that is in the future!", Toast.LENGTH_SHORT).show();
                 }
                 else if (endMinute < startMinute && startHour == endHour){
-                    Toast.makeText(getApplicationContext(), "Please enter an minute after your start minute!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Please enter a end time that is in the future!", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     sendData();
