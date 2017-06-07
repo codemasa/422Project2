@@ -49,81 +49,71 @@ public class InsertEvent extends AppCompatActivity {
 
     public void setInformation(String date, String _event, int[] _startTime, int[] _endTime) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-<<<<<<< HEAD
-=======
+
         SharedPreferences.Editor ed;
-<<<<<<< HEAD
-        if(count > 0) {
-=======
-        if(!sharedPrefs.contains("initialized")) {
-            ed = sharedPrefs.edit();
-            ed.putBoolean("initialized", true);
-<<<<<<< HEAD
->>>>>>> parent of b3eb37a... change
-=======
->>>>>>> parent of b3eb37a... change
->>>>>>> 2d98ddc413810e66f501476d84b07a36d62f0363
 
 
-        if(sharedPrefs.contains("calendar")) {
-            sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-            Gson gson = new Gson();
-            String json = sharedPrefs.getString("calendar", null);
-            Type type = new TypeToken<ArrayList<Event>>() {
-            }.getType();
-            ArrayList<Event> arrayList = gson.fromJson(json, type);
-            calendar = arrayList;
-            count++;
-            Event event = new Event();
-            String[] splitDate = date.split("\\s+");
-            // so the date comes as a string now we will parse it to more specific information
-            // it was in the form dd mm yyyy
-            day = Integer.parseInt(splitDate[0]);
-            month = Integer.parseInt(splitDate[1]);
-            year = Integer.parseInt(splitDate[2]);
 
-            event.setDay(day);
-            event.setMonth(month);
-            event.setYear(year);
-            event.setEventName(eventName);
-            event.setStartTime(startTime);
-            event.setEndTime(endTime);
+                if (sharedPrefs.contains("calendar")) {
+                    sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                    Gson gson = new Gson();
+                    String json = sharedPrefs.getString("calendar", null);
+                    Type type = new TypeToken<ArrayList<Event>>() {
+                    }.getType();
+                    ArrayList<Event> arrayList = gson.fromJson(json, type);
+                    calendar = arrayList;
+                    count++;
+                    Event event = new Event();
+                    String[] splitDate = date.split("\\s+");
+                    // so the date comes as a string now we will parse it to more specific information
+                    // it was in the form dd mm yyyy
+                    day = Integer.parseInt(splitDate[0]);
+                    month = Integer.parseInt(splitDate[1]);
+                    year = Integer.parseInt(splitDate[2]);
 
-            calendar.add(event);
+                    event.setDay(day);
+                    event.setMonth(month);
+                    event.setYear(year);
+                    event.setEventName(eventName);
+                    event.setStartTime(startTime);
+                    event.setEndTime(endTime);
 
-         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        Editor editor = sharedPrefs.edit();
-         gson = new Gson();
-        json = gson.toJson(calendar);
-        editor.putString("calendar", json);
-        editor.apply();
-    }else {
-            Log.d("made it!", " ");
-        Event event = new Event();
-        String[] splitDate = date.split("\\s+");
-        // so the date comes as a string now we will parse it to more specific information
-        // it was in the form dd mm yyyy
-        day = Integer.parseInt(splitDate[0]);
-        month = Integer.parseInt(splitDate[1]);
-        year = Integer.parseInt(splitDate[2]);
+                    calendar.add(event);
 
-        event.setDay(day);
-        event.setMonth(month);
-        event.setYear(year);
-        event.setEventName(eventName);
-        event.setStartTime(startTime);
-        event.setEndTime(endTime);
+                    sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                    Editor editor = sharedPrefs.edit();
+                    gson = new Gson();
+                    json = gson.toJson(calendar);
+                    editor.putString("calendar", json);
+                    editor.apply();
+                } else {
+                    Log.d("made it!", " ");
+                    Event event = new Event();
+                    String[] splitDate = date.split("\\s+");
+                    // so the date comes as a string now we will parse it to more specific information
+                    // it was in the form dd mm yyyy
+                    day = Integer.parseInt(splitDate[0]);
+                    month = Integer.parseInt(splitDate[1]);
+                    year = Integer.parseInt(splitDate[2]);
 
-        calendar.add(event);
+                    event.setDay(day);
+                    event.setMonth(month);
+                    event.setYear(year);
+                    event.setEventName(eventName);
+                    event.setStartTime(startTime);
+                    event.setEndTime(endTime);
 
-        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        Editor editor = sharedPrefs.edit();
-        Gson gson = new Gson();
-        String json = gson.toJson(calendar);
-        editor.putString("calendar", json);
-        editor.apply();
-    }
-    }
+                    calendar.add(event);
+
+                    sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                    Editor editor = sharedPrefs.edit();
+                    Gson gson = new Gson();
+                    String json = gson.toJson(calendar);
+                    editor.putString("calendar", json);
+                    editor.apply();
+                }
+            }
+
     public void goBackToMain(){
         Toast.makeText(getApplicationContext(), eventName + " Scheduled ", Toast.LENGTH_SHORT).show();
         Intent myIntent = new Intent(this, MainActivity.class);
